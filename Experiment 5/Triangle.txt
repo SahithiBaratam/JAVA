@@ -1,0 +1,45 @@
+import java.lang.*;
+import java.util.*;
+
+public class Triangle {
+    int a,b,c;
+    Triangle(int a,int b,int c){
+this.a=a;
+this.b=b;
+this.c=c;
+    }
+    void validate(){
+        if((a+b)>c && (b+c)>a && (a+c)>b ){
+            System.out.println("triangle is valid");
+        }
+        else {
+            System.out.println("not valid");
+        }
+        
+    }
+    void Semiperimeter(){
+        int s;
+        s=(this.a+this.b+this.c)/2;
+        System.out.println(s);
+    }
+    void area(){
+       double s=(double)(this.a+this.b+this.c)/2;
+        
+         double area=(Math.sqrt(s*((s-a)*(s-b)*(s-c))));
+        System.out.println(area);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter a,b and c");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        Triangle T1=new Triangle(a, b, c);
+        T1.validate();
+        T1.Semiperimeter();
+        T1.area();
+        
+
+    }
+    
+}
